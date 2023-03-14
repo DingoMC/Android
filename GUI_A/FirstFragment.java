@@ -88,7 +88,13 @@ public class FirstFragment extends Fragment {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String t = s.toString();
-                int n = Integer.parseInt(t);
+                int n;
+                try {
+                    n = Integer.parseInt(t);
+                }
+                catch (NumberFormatException e) {
+                    n = 0;
+                }
                 if (n < 5 || n > 15) binding.editTextTextPersonMark.setError("Nieprawidłowa wartość!");
             }
 
