@@ -17,6 +17,7 @@ import pl.pollub.lab1.databinding.ActivityMainBinding;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         appBarConfiguration = new AppBarConfiguration.Builder(navController.getGraph()).build();
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
-        
+
     }
 
     @Override
@@ -65,5 +66,27 @@ public class MainActivity extends AppCompatActivity {
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
+    }
+
+    @Override
+    protected void onSaveInstanceState (Bundle outState) {
+        TextView tv = (TextView) findViewById(R.id.textView2);
+        outState.putString("name", tv.getText().toString());
+        tv = (TextView) findViewById(R.id.textView3);
+        outState.putString("surname", tv.getText().toString());
+        tv = (TextView) findViewById(R.id.textView4);
+        outState.putString("marks", tv.getText().toString());
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onRestoreInstanceState (Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        TextView tv = (TextView) findViewById(R.id.textView2);
+        tv.setText(savedInstanceState.getString("name"));
+        tv = (TextView) findViewById(R.id.textView3);
+        tv.setText(savedInstanceState.getString("surname"));
+        tv = (TextView) findViewById(R.id.textView4);
+        tv.setText(savedInstanceState.getString("marks"));
     }
 }
