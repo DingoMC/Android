@@ -17,7 +17,7 @@
             android:layout_height="?attr/actionBarSize"
             android:background="@color/teal_700"
             app:popupTheme="@style/Theme.Lab1.PopupOverlay"
-            app:title="LAB1-2" />
+            app:title="@string/first_fragment_label" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
