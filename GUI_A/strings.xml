@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">lab1</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">lab1 - GUI</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="name_label">Imię:</string>
+    <string name="surname_label">Nazwisko:</string>
+    <string name="mark_label">Liczba Ocen:</string>
+    <string name="button_text">OCENY</string>
+    <string name="name_hint">Wpisz Imię</string>
+    <string name="surname_hint">Wpisz Nazwisko</string>
+    <string name="mark_hint">Wpisz liczbę ocen (5-15)</string>
+</resources>
